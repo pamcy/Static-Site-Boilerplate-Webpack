@@ -11,9 +11,6 @@ const config = {
   // Your website's URL, used for sitemap
   site_url: 'http://test.boilerplate.net',
 
-  // Google Analytics tracking ID (leave blank to disable)
-  googleAnalyticsUA: '',
-
   // Local development URL
   dev_host: 'localhost',
 

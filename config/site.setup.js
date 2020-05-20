@@ -43,12 +43,6 @@ async function runSetup() {
       hint: 'http://yourwebsite.com'
     },
     {
-      type: 'input',
-      name: 'google_analytics',
-      message: 'What is your Google Analytics Tracking ID?',
-      hint: 'UA-XXXXX-Y'
-    },
-    {
       type: 'select',
       name: 'cssreset',
       message: 'Which CSS reset library would you like installed?',
@@ -72,9 +66,6 @@ async function runSetup() {
     }
     if (typeof questions.site_url !== 'undefined') {
       data = data.replace(/site_url: '.*?'/g, `site_url: '${questions.site_url}'`);
-    }
-    if (typeof questions.google_analytics !== 'undefined') {
-      data = data.replace(/googleAnalyticsUA: '.*?'/g, `googleAnalyticsUA: '${questions.google_analytics}'`);
     }
 
     fs.writeFile(path.join(ROOT, '/config/site.config.js'), data, 'utf8', (err) => { });
