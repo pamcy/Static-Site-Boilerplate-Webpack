@@ -73,25 +73,25 @@ const sass = {
 };
 
 // Image loaders
-const imageLoader = {
-  loader: 'image-webpack-loader',
-  options: {
-    bypassOnDebug: true,
-    gifsicle: {
-      interlaced: false,
-    },
-    optipng: {
-      optimizationLevel: 7,
-    },
-    pngquant: {
-      quality: '65-90',
-      speed: 4,
-    },
-    mozjpeg: {
-      progressive: true,
-    },
-  },
-};
+// const imageLoader = {
+//   loader: 'image-webpack-loader',
+//   options: {
+//     bypassOnDebug: true,
+//     gifsicle: {
+//       interlaced: false,
+//     },
+//     optipng: {
+//       optimizationLevel: 7,
+//     },
+//     pngquant: {
+//       quality: '65-90',
+//       speed: 4,
+//     },
+//     mozjpeg: {
+//       progressive: true,
+//     },
+//   },
+// };
 
 const images = {
   test: /\.(gif|png|jpe?g|svg)$/i,
@@ -130,18 +130,18 @@ const fonts = {
 };
 
 // Video loaders
-const videos = {
-  test: /\.(mp4|webm)$/,
-  use: [
-    {
-      loader: 'file-loader',
-      query: {
-        name: '[name].[hash].[ext]',
-        outputPath: 'img/',
-      },
-    },
-  ],
-};
+// const videos = {
+//   test: /\.(mp4|webm)$/,
+//   use: [
+//     {
+//       loader: 'file-loader',
+//       query: {
+//         name: '[name].[hash].[ext]',
+//         outputPath: 'img/',
+//       },
+//     },
+//   ],
+// };
 
 module.exports = [
   html,
@@ -150,5 +150,5 @@ module.exports = [
   sass,
   images,
   fonts,
-  videos,
+  // videos,
 ];

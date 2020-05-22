@@ -74,6 +74,10 @@ const copyPlugin = new CopyPlugin({
       from: 'img/**',
       to: './',
     },
+    {
+      from: 'video/**',
+      to: './',
+    },
   ],
 });
 
