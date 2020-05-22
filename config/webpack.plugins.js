@@ -7,7 +7,7 @@ const path = require('path');
 const WebpackBar = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
-const StyleLintPlugin = require('stylelint-webpack-plugin');
+// const StyleLintPlugin = require('stylelint-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 // const RobotstxtPlugin = require('robotstxt-webpack-plugin');
@@ -46,7 +46,7 @@ const optimizeCss = new OptimizeCssAssetsPlugin({
 const clean = new CleanWebpackPlugin();
 
 // Stylelint
-const stylelint = new StyleLintPlugin();
+// const stylelint = new StyleLintPlugin();
 
 // Extract CSS
 const cssExtract = new MiniCssExtractPlugin({
