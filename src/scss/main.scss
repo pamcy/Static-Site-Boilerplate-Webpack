@@ -1,6 +1,3 @@
-// Load CSS Reset from NPM
-// @import "~normalize.css";
-
 // Vendors
 @import "vendor-overwrite/bootstrap";
 @import "vendor/bootstrap";
@@ -17,4 +14,4 @@
 @import "base/fonts";
 
 // Components
-@import "components/article";
+@import "components/grid-block";

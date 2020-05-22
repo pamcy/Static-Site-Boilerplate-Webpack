@@ -9,6 +9,29 @@
   padding-top: $ratio;
 }
 
+@mixin image-ratio-wrapper($ratio) {
+  position: relative;
+  display: block;
+  width: 100%;
+  height: auto;
+  padding-top: $ratio;
+  overflow: hidden;
+
+  img {
+    @extend %full-stretch;
+
+    position: absolute;
+  }
+
+  .resonsive-img-item {
+    @extend %full-stretch;
+    @extend %background-cover;
+
+    display: block;
+    position: absolute;
+  }
+}
+
 // Fluid Type Technique
 // https://stackoverflow.com/questions/40528290/how-to-implement-max-font-size
 @mixin fluid($properties, $list, $min-vw: $fluid-min, $max-vw: $fluid-max) {

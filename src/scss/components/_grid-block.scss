@@ -2,25 +2,31 @@ body {
   background: url('../img/rain.jpg');
 }
 
-.icon-controller {
-  font-size: rem(30);
+.resonsive-img-wrapper {
+  @include image-ratio-wrapper(56.25%);
 }
 
 .item {
-  margin-bottom: 20px;
+  @include fluid("margin-bottom", (spacing(1), spacing(1.5)));
+
+  .resonsive-img-item {
+    background-image: url('https://placeimg.com/2000/1024/nature');
+  }
 
   &-link {
     @include hocus {
-      background-color: darken($light-blue, 10%);
+      background-color: lighten($light-blue, 5%);
     }
 
     display: block;
+    padding: rem(20);
     background-color: $light-blue;
     transition: background-color $t-regular;
   }
 
   p {
     @extend %text--18;
+    @extend %text-center;
 
     color: $salmon;
 
