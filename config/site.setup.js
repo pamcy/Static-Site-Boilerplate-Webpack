@@ -24,30 +24,30 @@ async function runSetup() {
   );
 
   const questions = await prompt([
-    {
-      type: 'input',
-      name: 'site_name',
-      message: 'What is the name of your website?',
-      initial: 'Static Site Boilerplate'
-    },
-    {
-      type: 'input',
-      name: 'site_description',
-      message: 'What is a description of your website?',
-      initial: 'A modern boilerplate for static website development'
-    },
-    {
-      type: 'input',
-      name: 'site_url',
-      message: 'What is the live URL for your website?',
-      hint: 'http://yourwebsite.com'
-    },
-    {
-      type: 'select',
-      name: 'cssreset',
-      message: 'Which CSS reset library would you like installed?',
-      choices: ['normalize.css', 'reset.css', 'sanitize.css', 'None'],
-    },
+    // {
+    //   type: 'input',
+    //   name: 'site_name',
+    //   message: 'What is the name of your website?',
+    //   initial: 'Static Site Boilerplate'
+    // },
+    // {
+    //   type: 'input',
+    //   name: 'site_description',
+    //   message: 'What is a description of your website?',
+    //   initial: 'A modern boilerplate for static website development'
+    // },
+    // {
+    //   type: 'input',
+    //   name: 'site_url',
+    //   message: 'What is the live URL for your website?',
+    //   hint: 'http://yourwebsite.com'
+    // },
+    // {
+    //   type: 'select',
+    //   name: 'cssreset',
+    //   message: 'Which CSS reset library would you like installed?',
+    //   choices: ['normalize.css', 'reset.css', 'sanitize.css', 'None'],
+    // },
     {
       type: 'select',
       name: 'jquery',
@@ -57,28 +57,28 @@ async function runSetup() {
   ]);
 
   // Update site configuration
-  fs.readFile('./config/site.config.js', 'utf8', (err, data) => {
-    if (typeof questions.site_name !== 'undefined') {
-      data = data.replace(/site_name: '.*?'/g, `site_name: '${questions.site_name}'`);
-    }
-    if (typeof questions.site_description !== 'undefined') {
-      data = data.replace(/site_description: '.*?'/g, `site_description: '${questions.site_description}'`);
-    }
-    if (typeof questions.site_url !== 'undefined') {
-      data = data.replace(/site_url: '.*?'/g, `site_url: '${questions.site_url}'`);
-    }
+  // fs.readFile('./config/site.config.js', 'utf8', (err, data) => {
+  //   if (typeof questions.site_name !== 'undefined') {
+  //     data = data.replace(/site_name: '.*?'/g, `site_name: '${questions.site_name}'`);
+  //   }
+  //   if (typeof questions.site_description !== 'undefined') {
+  //     data = data.replace(/site_description: '.*?'/g, `site_description: '${questions.site_description}'`);
+  //   }
+  //   if (typeof questions.site_url !== 'undefined') {
+  //     data = data.replace(/site_url: '.*?'/g, `site_url: '${questions.site_url}'`);
+  //   }
 
-    fs.writeFile(path.join(ROOT, '/config/site.config.js'), data, 'utf8', (err) => { });
-  });
+  //   fs.writeFile(path.join(ROOT, '/config/site.config.js'), data, 'utf8', (err) => { });
+  // });
 
   // Add CSS reset to stylesheet
-  if (questions.cssreset !== 'None') {
-    const cssContent =
-      '// Load CSS Reset from NPM\n'
-      + '@import "~' + questions.cssreset + '"\n';
+  // if (questions.cssreset !== 'None') {
+  //   const cssContent =
+  //     '// Load CSS Reset from NPM\n'
+  //     + '@import "~' + questions.cssreset + '"\n';
 
-    fs.writeFile(path.join(ROOT, '/src/scss/main.scss'), cssContent, (err) => {});
-  }
+  //   fs.writeFile(path.join(ROOT, '/src/scss/main.scss'), cssContent, (err) => {});
+  // }
 
   // Add jQuery to scripts
   if (questions.jquery == 'Yes') {
