@@ -72,34 +72,9 @@ const sass = {
   ],
 };
 
-// Image loaders
-// const imageLoader = {
-//   loader: 'image-webpack-loader',
-//   options: {
-//     bypassOnDebug: true,
-//     gifsicle: {
-//       interlaced: false,
-//     },
-//     optipng: {
-//       optimizationLevel: 7,
-//     },
-//     pngquant: {
-//       quality: '65-90',
-//       speed: 4,
-//     },
-//     mozjpeg: {
-//       progressive: true,
-//     },
-//   },
-// };
-
 const images = {
   test: /\.(gif|png|jpe?g|svg)$/i,
   exclude: /fonts/,
-  // use: [
-  //   'file-loader?name=img/[name].[hash].[ext]',
-  //   config.env === 'production' ? imageLoader : null,
-  // ].filter(Boolean),
   use: [
     {
       loader: 'file-loader',
@@ -129,20 +104,6 @@ const fonts = {
   ],
 };
 
-// Video loaders
-// const videos = {
-//   test: /\.(mp4|webm)$/,
-//   use: [
-//     {
-//       loader: 'file-loader',
-//       query: {
-//         name: '[name].[hash].[ext]',
-//         outputPath: 'img/',
-//       },
-//     },
-//   ],
-// };
-
 module.exports = [
   html,
   js,
@@ -150,5 +111,4 @@ module.exports = [
   sass,
   images,
   fonts,
-  // videos,
 ];

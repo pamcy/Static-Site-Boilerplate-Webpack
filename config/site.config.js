@@ -8,9 +8,6 @@ if (!ROOT) {
 }
 
 const config = {
-  // Your website's URL, used for sitemap
-  // site_url: 'http://test.boilerplate.net',
-
   // Local development URL
   dev_host: 'localhost',
 
@@ -26,7 +23,9 @@ const config = {
     dist: 'dist',
   },
   package: JSON.parse(
-    fs.readFileSync(path.join(ROOT, '/package.json'), { encoding: 'utf-8' }),
+    fs.readFileSync(path.join(ROOT, '/package.json'), {
+      encoding: 'utf-8',
+    }),
   ),
 };
 
