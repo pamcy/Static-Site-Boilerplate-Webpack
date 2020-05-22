@@ -9,7 +9,7 @@ if (!ROOT) {
 
 const config = {
   // Your website's URL, used for sitemap
-  site_url: 'http://test.boilerplate.net',
+  // site_url: 'http://test.boilerplate.net',
 
   // Local development URL
   dev_host: 'localhost',
