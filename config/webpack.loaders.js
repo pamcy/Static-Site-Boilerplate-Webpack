@@ -104,7 +104,8 @@ const images = {
     {
       loader: 'file-loader',
       query: {
-        name: '[name].[hash].[ext]',
+        // name: '[name].[hash].[ext]',
+        name: '[name].[ext]',
         outputPath: 'img',
         publicPath: '../img',
       },

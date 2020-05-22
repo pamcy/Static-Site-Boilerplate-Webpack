@@ -12,6 +12,7 @@ const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
 const SitemapPlugin = require('sitemap-webpack-plugin').default;
+const CopyPlugin = require('copy-webpack-plugin');
 
 const config = require('./site.config');
 
@@ -67,6 +68,15 @@ const generateHTMLPlugins = () => glob.sync('./src/**/*.html').map((dir) => {
   });
 });
 
+const copyPlugin = new CopyPlugin({
+  patterns: [
+    {
+      from: 'img/**',
+      to: './',
+    },
+  ],
+});
+
 // Sitemap
 const sitemap = new SitemapPlugin(config.site_url, paths, {
   priority: 1.0,
@@ -111,6 +121,7 @@ module.exports = [
   config.env === 'production' && optimizeCss,
   config.env === 'production' && robots,
   config.env === 'production' && sitemap,
+  config.env === 'production' && copyPlugin,
   config.googleAnalyticsUA && google,
   webpackBar,
   config.env === 'development' && hmr,
