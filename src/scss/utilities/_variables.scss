@@ -1,0 +1,22 @@
+// Colors
+$white: #fff;
+
+$black-1: #000000;
+$black-2: #000003;
+$black-3: #020004;
+
+$salmon: salmon;
+$light-blue: lightblue;
+
+// Transitions
+$ease: cubic-bezier(0.165, 0.84, 0.44, 1);
+
+$t-speed: 500ms;
+
+$t-regular: $t-speed $ease;
+$t-fast: $t-speed / 2 $ease;
+$t-slow: $t-speed * 2 $ease;
+
+// Fluid type breakpoints
+$fluid-min: breakpoint-min(sm);
+$fluid-max: breakpoint-min(xl);

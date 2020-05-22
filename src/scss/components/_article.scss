@@ -1,0 +1,31 @@
+body {
+  background: url('../img/rain.jpg');
+}
+
+.icon-controller {
+  font-size: rem(30);
+}
+
+.item {
+  margin-bottom: 20px;
+
+  &-link {
+    @include hocus {
+      background-color: darken($light-blue, 10%);
+    }
+
+    display: block;
+    background-color: $light-blue;
+    transition: background-color $t-regular;
+  }
+
+  p {
+    @extend %text--18;
+
+    color: $salmon;
+
+    @include media-breakpoint-down(md) {
+      color: orange;
+    }
+  }
+}

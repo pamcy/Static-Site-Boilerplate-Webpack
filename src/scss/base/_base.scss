@@ -1,0 +1,33 @@
+html,
+body {
+  -webkit-overflow-scrolling: touch !important;
+  overflow: auto;
+  height: 100% !important;
+}
+
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-tap-highlight-color: rgba(0, 0, 0, 0.5);
+}
+
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+a {
+  @include hocus {
+    text-decoration: none;
+    color: inherit;
+  }
+}
+
+ul {
+  padding: 0;
+}
+
+li {
+  list-style: none;
+}

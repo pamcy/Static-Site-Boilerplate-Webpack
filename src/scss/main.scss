@@ -1,10 +1,20 @@
 // Load CSS Reset from NPM
-@import "~normalize.css";
+// @import "~normalize.css";
 
-body {
-  background-color: lightblue;
-}
+// Vendors
+@import "vendor-overwrite/bootstrap";
+@import "vendor/bootstrap";
 
-h2 {
-  font-size: 32px;
-}
+// Utilities
+@import "utilities/variables";
+@import "utilities/functions";
+@import "utilities/mixins";
+@import "utilities/spacing";
+@import "utilities/helpers";
+
+// Base
+@import "base/base";
+@import "base/fonts";
+
+// Components
+@import "components/article";

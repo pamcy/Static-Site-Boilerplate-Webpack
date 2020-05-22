@@ -8,7 +8,6 @@ const WebpackBar = require('webpackbar');
 const { CleanWebpackPlugin } = require('clean-webpack-plugin');
 const HTMLWebpackPlugin = require('html-webpack-plugin');
 const StyleLintPlugin = require('stylelint-webpack-plugin');
-// const WebappWebpackPlugin = require('webapp-webpack-plugin');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const OptimizeCssAssetsPlugin = require('optimize-css-assets-webpack-plugin');
 const RobotstxtPlugin = require('robotstxt-webpack-plugin');
@@ -106,7 +105,7 @@ const google = new GoogleAnalyticsPlugin({
 
 module.exports = [
   clean,
-  stylelint,
+  // stylelint,
   cssExtract,
   ...generateHTMLPlugins(),
   config.env === 'production' && optimizeCss,

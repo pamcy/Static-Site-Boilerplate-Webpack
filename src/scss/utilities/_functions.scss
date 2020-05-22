@@ -1,0 +1,15 @@
+@function rem($pixel) {
+  @return $pixel / 16 + rem;
+}
+
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}
+
+@function spacing($size) {
+  @if (map-has-key($spacing, $size) ==false) {
+    @error "Spacing map doesn't have that size defined!";
+  }
+
+  @return map-get($spacing, $size);
+}

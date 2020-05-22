@@ -96,10 +96,20 @@ const imageLoader = {
 const images = {
   test: /\.(gif|png|jpe?g|svg)$/i,
   exclude: /fonts/,
+  // use: [
+  //   'file-loader?name=img/[name].[hash].[ext]',
+  //   config.env === 'production' ? imageLoader : null,
+  // ].filter(Boolean),
   use: [
-    'file-loader?name=img/[name].[hash].[ext]',
-    config.env === 'production' ? imageLoader : null,
-  ].filter(Boolean),
+    {
+      loader: 'file-loader',
+      query: {
+        name: '[name].[hash].[ext]',
+        outputPath: 'img',
+        publicPath: '../img',
+      },
+    },
+  ],
 };
 
 // Font loaders
@@ -111,7 +121,8 @@ const fonts = {
       loader: 'file-loader',
       query: {
         name: '[name].[hash].[ext]',
-        outputPath: 'fonts/',
+        outputPath: 'fonts/icons',
+        publicPath: '../fonts/icons',
       },
     },
   ],
