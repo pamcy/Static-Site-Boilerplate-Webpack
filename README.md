@@ -13,6 +13,8 @@ git clone https://github.com/pamcy/Custom-Webpack-Config-Boilerplate.git
 && cd Custom-Webpack-Config-Boilerplate && rm -rf .git && git init
 ```
 
+## Usage
+
 **Install dependencies**
 
 ```bash
