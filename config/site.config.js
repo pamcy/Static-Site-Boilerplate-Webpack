@@ -9,7 +9,7 @@ if (!ROOT) {
 
 const config = {
   // Local development URL
-  dev_host: 'localhost',
+  dev_host: '0.0.0.0',
 
   // Local development port
   port: process.env.PORT || 8000,
