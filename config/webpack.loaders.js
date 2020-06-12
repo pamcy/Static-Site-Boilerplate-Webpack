@@ -31,6 +31,13 @@ const styleLoader = {
   loader: 'style-loader',
 };
 
+const productionMiniCssLoader = {
+  loader: MiniCssExtractPlugin.loader,
+  options: {
+    publicPath: '../', // production (dist); for css image url
+  },
+}
+
 const cssLoader = {
   loader: 'css-loader',
   options: {
@@ -48,10 +55,17 @@ const postcssLoader = {
   },
 };
 
+const sassLoader = {
+  loader: 'sass-loader',
+  options: {
+    sourceMap,
+  },
+}
+
 const css = {
   test: /\.css$/,
   use: [
-    config.env === 'production' ? MiniCssExtractPlugin.loader : styleLoader,
+    config.env === 'production' ? productionMiniCssLoader : styleLoader,
     cssLoader,
     postcssLoader,
   ],
@@ -60,15 +74,10 @@ const css = {
 const sass = {
   test: /\.s[c|a]ss$/,
   use: [
-    config.env === 'production' ? MiniCssExtractPlugin.loader : styleLoader,
+    config.env === 'production' ? productionMiniCssLoader : styleLoader,
     cssLoader,
     postcssLoader,
-    {
-      loader: 'sass-loader',
-      options: {
-        sourceMap,
-      },
-    },
+    sassLoader,
   ],
 };
 
@@ -77,12 +86,12 @@ const images = {
   exclude: /fonts/,
   use: [
     {
-      loader: 'file-loader',
-      query: {
-        // name: '[name].[hash].[ext]',
+      loader: 'url-loader',
+      options: {
         name: '[name].[ext]',
         outputPath: 'img',
-        publicPath: '../img',
+        limit: false, // limit: 500, // 檔案小於 byte 將包裝為 base64
+        fallback: require.resolve('file-loader'),
       },
     },
   ],

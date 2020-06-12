@@ -61,16 +61,18 @@ const copyPlugin = new CopyPlugin({
       from: 'img/**',
       to: './',
     },
-    {
-      from: 'video/**',
-      to: './',
-    },
   ],
 });
 
 // Webpack bar
 const webpackBar = new WebpackBar({
   color: '#ff6469',
+});
+
+// Global jQuery
+const globalJquery = new webpack.ProvidePlugin({
+  $: "jquery",
+  jQuery: "jquery"
 });
 
 module.exports = [
@@ -81,4 +83,5 @@ module.exports = [
   config.env === 'production' && copyPlugin,
   webpackBar,
   config.env === 'development' && hmr,
+  globalJquery,
 ].filter(Boolean);
